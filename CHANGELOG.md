@@ -1,6 +1,6 @@
-## 0.0.1
+## 0.1.0
 
-- Created the initial version of the project.
+- Added `backgroundColor` Option for SideMenu
 
 ## 0.1.0
 
@@ -14,3 +14,7 @@
 
 ### Other Changes
 - Added example
+
+## 0.0.1
+
+- Created the initial version of the project.
