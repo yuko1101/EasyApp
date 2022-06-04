@@ -20,34 +20,37 @@ class MainScreen extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => PageManager.goBack(context),
       child: ValueListenableBuilder<BaseScreen>(
-          valueListenable: PageManager.screenNotifier,
-          builder: (_, baseScreen, __) {
-            if (Responsive.isDesktop(context)) {
-              return Scaffold(
-                key: scaffoldKey,
-                resizeToAvoidBottomInset: false,
-                body:
-                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                  sideMenu,
-                  Expanded(child: baseScreen.screen),
-                  baseScreen.endDrawer ?? const SizedBox(width: 0, height: 0)
-                ]),
-              );
-            }
+        valueListenable: PageManager.screenNotifier,
+        builder: (_, baseScreen, __) {
+          if (Responsive.isDesktop(context)) {
             return Scaffold(
               key: scaffoldKey,
               resizeToAvoidBottomInset: false,
-              appBar: baseScreen.appBar,
-              body: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: baseScreen.footer != null
-                    ? [Expanded(child: baseScreen.screen), baseScreen.footer!]
-                    : [Expanded(child: baseScreen.screen)],
+              body: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  sideMenu,
+                  Expanded(child: baseScreen.screen),
+                  baseScreen.endDrawer ?? const SizedBox(width: 0, height: 0)
+                ],
               ),
-              drawer: sideMenu,
-              endDrawer: baseScreen.endDrawer,
             );
-          }),
+          }
+          return Scaffold(
+            key: scaffoldKey,
+            resizeToAvoidBottomInset: false,
+            appBar: baseScreen.appBar,
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: baseScreen.footer != null
+                  ? [Expanded(child: baseScreen.screen), baseScreen.footer!]
+                  : [Expanded(child: baseScreen.screen)],
+            ),
+            drawer: sideMenu,
+            endDrawer: baseScreen.endDrawer,
+          );
+        },
+      ),
     );
   }
 }

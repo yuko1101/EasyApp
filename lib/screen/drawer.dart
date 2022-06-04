@@ -15,25 +15,29 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 210,
-        child: Row(children: [
-          Expanded(
-              child: Drawer(
-                  child: Container(
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                      child: SingleChildScrollView(
-                          child: ListView(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              children: [
-                            DrawerHeader(
-                              child: Center(
-                                child: ListTile(leading: appIcon, title: title),
-                              ),
-                            ),
-                            ...items
-                          ])))))
-        ]));
+      width: 210,
+      child: Expanded(
+        child: Drawer(
+          child: Container(
+            color: Theme.of(context).scaffoldBackgroundColor,
+            child: SingleChildScrollView(
+              child: ListView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: [
+                  DrawerHeader(
+                    child: Center(
+                      child: ListTile(leading: appIcon, title: title),
+                    ),
+                  ),
+                  ...items
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
 
