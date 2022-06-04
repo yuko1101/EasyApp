@@ -11,7 +11,7 @@ class SideMenu extends StatelessWidget {
 
   final Widget title;
   final Widget appIcon;
-  final List<DrawerListTile> items;
+  final List<SideMenuItem> items;
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +49,8 @@ class SideMenu extends StatelessWidget {
   }
 }
 
-class DrawerListTile extends StatelessWidget {
-  const DrawerListTile(
+class SideMenuItem extends StatelessWidget {
+  const SideMenuItem(
       {required this.title, required this.icon, required this.onPressed, Key? key})
       : super(key: key);
 
