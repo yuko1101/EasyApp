@@ -25,9 +25,18 @@ class NetworkUtils {
     return networkConnected();
   }
 
-  static showNetworkAccessDeniedMessage() {
-    if (!networkConnected()) Fluttertoast.showToast(msg: "インターネットに接続できませんでした");
-    if (!networkAccessible())
-      Fluttertoast.showToast(msg: "インターネット接続方法が制限されています");
+  static showNetworkAccessDeniedMessage({
+    String? notConnectedMessage,
+    String? notAccessibleMessage,
+  }) {
+    if (!networkConnected()) {
+      Fluttertoast.showToast(
+        msg: notConnectedMessage ?? "No internet connection",
+      );
+    } else if (!networkAccessible()) {
+      Fluttertoast.showToast(
+        msg: notAccessibleMessage ?? "No internet access",
+      );
+    }
   }
 }

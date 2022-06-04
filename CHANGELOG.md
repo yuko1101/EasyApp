@@ -1,6 +1,7 @@
 ## 0.1.1
 
 - Added `backgroundColor` Option for SideMenu
+- Added `notConnectedMessage` and `notAccessibleMessage` Option for NetworkUtils.showNetworkAccessDeniedMessage()
 
 ## 0.1.0
 
