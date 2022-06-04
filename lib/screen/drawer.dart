@@ -44,27 +44,30 @@ class SideMenu extends StatelessWidget {
 }
 
 class SideMenuItem extends StatelessWidget {
-  const SideMenuItem(
-      {required this.title,
-      required this.icon,
-      required this.onPressed,
-      Key? key})
-      : super(key: key);
+  const SideMenuItem({
+    required this.title,
+    required this.icon,
+    required this.onPressed,
+    this.backgroundColor,
+    Key? key,
+  }) : super(key: key);
 
   final Widget title;
   final Icon icon;
   final VoidCallback onPressed;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Theme.of(context).scaffoldBackgroundColor,
+      color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
       child: InkWell(
         child: ListTile(
-            onTap: onPressed,
-            horizontalTitleGap: 0.0,
-            leading: icon,
-            title: title),
+          onTap: onPressed,
+          horizontalTitleGap: 0.0,
+          leading: icon,
+          title: title,
+        ),
       ),
     );
   }
