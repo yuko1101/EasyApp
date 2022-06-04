@@ -1,7 +1,6 @@
 library easy_app;
 
 import 'package:easy_app/screen/base_screen.dart';
-import 'package:easy_app/screen/drawer.dart';
 import 'package:easy_app/screen/main_screen.dart';
 import 'package:easy_app/screen/page_manager.dart';
 import 'package:easy_app/utils/languages.dart';

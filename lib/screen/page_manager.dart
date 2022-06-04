@@ -1,4 +1,3 @@
-import 'package:easy_app/easy_app.dart';
 import 'package:flutter/material.dart';
 import 'base_screen.dart';
 

@@ -1,4 +1,3 @@
-import 'package:easy_app/screen/page_manager.dart';
 import 'package:flutter/material.dart';
 
 class SideMenu extends StatelessWidget {
@@ -17,41 +16,33 @@ class SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         width: 210,
-        child: Row(
-            children: [
-              Expanded(
-                  child: Drawer(
-                      child: Container(
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                          child: SingleChildScrollView(
-                              child: ListView(
-                                  shrinkWrap: true,
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  children: [
-                                    DrawerHeader(
-                                      child: Center(
-                                        child: ListTile(
-                                          leading: appIcon,
-                                          title: title
-                                        ),
-                                      ),
-                                    ),
-                                    ...items
-                                  ]
-                              )
-                          )
-                      )
-                  )
-              )
-            ]
-        )
-    );
+        child: Row(children: [
+          Expanded(
+              child: Drawer(
+                  child: Container(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      child: SingleChildScrollView(
+                          child: ListView(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              children: [
+                            DrawerHeader(
+                              child: Center(
+                                child: ListTile(leading: appIcon, title: title),
+                              ),
+                            ),
+                            ...items
+                          ])))))
+        ]));
   }
 }
 
 class SideMenuItem extends StatelessWidget {
   const SideMenuItem(
-      {required this.title, required this.icon, required this.onPressed, Key? key})
+      {required this.title,
+      required this.icon,
+      required this.onPressed,
+      Key? key})
       : super(key: key);
 
   final Widget title;
@@ -64,11 +55,10 @@ class SideMenuItem extends StatelessWidget {
       color: Theme.of(context).scaffoldBackgroundColor,
       child: InkWell(
         child: ListTile(
-          onTap: onPressed,
-          horizontalTitleGap: 0.0,
-          leading: icon,
-          title: title
-        ),
+            onTap: onPressed,
+            horizontalTitleGap: 0.0,
+            leading: icon,
+            title: title),
       ),
     );
   }

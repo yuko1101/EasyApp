@@ -25,9 +25,6 @@ class OS extends StatelessWidget {
     this.unknown,
   }) : super(key: key);
 
-// This size work fine on my design, maybe you need some customization depends on your design
-
-  // This isMobile, isTablet, isDesktop helep us later
   static bool isMobile() =>
       Platform.isAndroid || Platform.isIOS;
 

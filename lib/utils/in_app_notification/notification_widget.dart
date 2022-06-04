@@ -1,4 +1,3 @@
-import 'package:easy_app/utils/in_app_notification/in_app_notification.dart';
 import 'package:flutter/material.dart';
 import 'notification_data.dart';
 
