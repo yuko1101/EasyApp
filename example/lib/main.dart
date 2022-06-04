@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Easy App Example',
-        home: MainScreen(
-            sideMenu: SideMenu(
+      title: 'Easy App Example',
+      home: MainScreen(
+        sideMenu: SideMenu(
           title: const Text("Easy App"),
           appIcon: const Icon(Icons.ac_unit),
           items: [
@@ -32,35 +32,40 @@ class MyApp extends StatelessWidget {
               },
             ),
             SideMenuItem(
-                title: const Text("Alarm"),
-                icon: const Icon(Icons.access_alarm),
-                onPressed: () {
-                  if (EasyApp.currentScreen is AlarmScreen) return;
-                  EasyApp.pushPage(context, AlarmScreen());
-                })
+              title: const Text("Alarm"),
+              icon: const Icon(Icons.access_alarm),
+              onPressed: () {
+                if (EasyApp.currentScreen is AlarmScreen) return;
+                EasyApp.pushPage(context, AlarmScreen());
+              },
+            )
           ],
-        )));
+        ),
+      ),
+    );
   }
 }
 
 class HomeScreen extends BaseScreen {
   HomeScreen()
       : super(
-            appBar: AppBar(
-              title: const Text('Home'),
-            ),
-            screen: const Center(
-              child: Text('Home Screen'),
-            ));
+          appBar: AppBar(
+            title: const Text('Home'),
+          ),
+          screen: const Center(
+            child: Text('Home Screen'),
+          ),
+        );
 }
 
 class AlarmScreen extends BaseScreen {
   AlarmScreen()
       : super(
-            appBar: AppBar(
-              title: const Text('Alarm'),
-            ),
-            screen: const Center(
-              child: Text('Alarm Screen'),
-            ));
+          appBar: AppBar(
+            title: const Text('Alarm'),
+          ),
+          screen: const Center(
+            child: Text('Alarm Screen'),
+          ),
+        );
 }
