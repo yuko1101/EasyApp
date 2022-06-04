@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'base_screen.dart';
 
 class PageManager {
-
   static List<BaseScreen> pages = [];
   static late ValueNotifier<BaseScreen> screenNotifier;
   static late BaseScreen homeScreen;
@@ -13,7 +12,8 @@ class PageManager {
   }
 
   static bool goBack(BuildContext context) {
-    if (screenNotifier.value.runtimeType == PageManager.homeScreen.runtimeType) return false;
+    if (screenNotifier.value.runtimeType == PageManager.homeScreen.runtimeType)
+      return false;
     if (screenNotifier.value.previousPage != null) {
       pages.clear();
       screenNotifier.value = screenNotifier.value.previousPage!;

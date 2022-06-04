@@ -4,11 +4,9 @@ import 'base_screen.dart';
 import 'drawer.dart';
 import 'page_manager.dart';
 
-
 class MainScreen extends StatelessWidget {
-
-  static const GlobalObjectKey<ScaffoldState> scaffoldKey = GlobalObjectKey("main_screen");
-
+  static const GlobalObjectKey<ScaffoldState> scaffoldKey =
+      GlobalObjectKey("main_screen");
 
   const MainScreen({
     required this.sideMenu,
@@ -28,14 +26,12 @@ class MainScreen extends StatelessWidget {
               return Scaffold(
                 key: scaffoldKey,
                 resizeToAvoidBottomInset: false,
-                body: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      sideMenu,
-                      Expanded(child: baseScreen.screen),
-                      baseScreen.endDrawer ?? const SizedBox(width: 0, height: 0)
-                    ]
-                ),
+                body:
+                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  sideMenu,
+                  Expanded(child: baseScreen.screen),
+                  baseScreen.endDrawer ?? const SizedBox(width: 0, height: 0)
+                ]),
               );
             }
             return Scaffold(
@@ -44,13 +40,14 @@ class MainScreen extends StatelessWidget {
               appBar: baseScreen.appBar,
               body: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: baseScreen.footer != null ? [Expanded(child: baseScreen.screen), baseScreen.footer!] : [Expanded(child: baseScreen.screen)],
+                children: baseScreen.footer != null
+                    ? [Expanded(child: baseScreen.screen), baseScreen.footer!]
+                    : [Expanded(child: baseScreen.screen)],
               ),
               drawer: sideMenu,
               endDrawer: baseScreen.endDrawer,
             );
-          }
-      ),
+          }),
     );
   }
 }

@@ -25,8 +25,7 @@ class OS extends StatelessWidget {
     this.unknown,
   }) : super(key: key);
 
-  static bool isMobile() =>
-      Platform.isAndroid || Platform.isIOS;
+  static bool isMobile() => Platform.isAndroid || Platform.isIOS;
 
   static bool isDesktopOrLaptop() =>
       Platform.isMacOS || Platform.isWindows || Platform.isLinux;
@@ -67,13 +66,4 @@ class OS extends StatelessWidget {
   }
 }
 
-enum OSType {
-  android,
-  iOS,
-  windows,
-  macOS,
-  linux,
-  fuchsia,
-  web,
-  unknown
-}
+enum OSType { android, iOS, windows, macOS, linux, fuchsia, web, unknown }

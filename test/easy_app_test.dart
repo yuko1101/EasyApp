@@ -20,9 +20,6 @@ void main() {
   });
 }
 
-
 class HomeScreen extends BaseScreen {
-  HomeScreen() : super(
-    screen: Container()
-  );
+  HomeScreen() : super(screen: Container());
 }

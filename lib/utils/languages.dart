@@ -21,10 +21,10 @@ class Language {
     }
   }
 
-
   static Future<void> loadLanguage(String language) async {
     if (!languages.contains(language)) throw Exception("Language not found");
-    final String content = await rootBundle.loadString("assets/lang/$language.json");
+    final String content =
+        await rootBundle.loadString("assets/lang/$language.json");
     final Map<String, dynamic> json = jsonDecode(content);
     currentLanguage = json;
     // await SettingsData.settings.set(key: "language", value: language).save();

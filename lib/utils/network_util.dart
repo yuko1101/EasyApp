@@ -3,12 +3,13 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class NetworkUtils {
-
   static late StreamSubscription connectivitySubscription;
   static late ConnectivityResult connectivityResult;
   static void init() async {
-    connectivitySubscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-        connectivityResult = result;
+    connectivitySubscription = Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) {
+      connectivityResult = result;
     });
   }
 
@@ -26,9 +27,7 @@ class NetworkUtils {
 
   static showNetworkAccessDeniedMessage() {
     if (!networkConnected()) Fluttertoast.showToast(msg: "インターネットに接続できませんでした");
-    if (!networkAccessible()) Fluttertoast.showToast(msg: "インターネット接続方法が制限されています");
+    if (!networkAccessible())
+      Fluttertoast.showToast(msg: "インターネット接続方法が制限されています");
   }
-
 }
-
-

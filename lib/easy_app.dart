@@ -16,7 +16,8 @@ class EasyApp {
     List<String> languages = const ["en_US"],
     required BaseScreen homeScreen,
   }) async {
-    if (OS.getOS() != OSType.web) localPath = (await getApplicationDocumentsDirectory()).path;
+    if (OS.getOS() != OSType.web)
+      localPath = (await getApplicationDocumentsDirectory()).path;
     if (activateConnectionChecker) NetworkUtils.init();
     if (languages.isNotEmpty) await Language.init(languages);
     PageManager.init(homeScreen);
@@ -29,6 +30,6 @@ class EasyApp {
     }
     PageManager.pushPage(context, screen);
   }
-  static void popPage(BuildContext context) => PageManager.goBack(context);
 
+  static void popPage(BuildContext context) => PageManager.goBack(context);
 }
