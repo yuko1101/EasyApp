@@ -5,12 +5,14 @@ class SideMenu extends StatelessWidget {
     required this.title,
     required this.appIcon,
     required this.items,
+    this.backgroundColor,
     Key? key,
   }) : super(key: key);
 
   final Widget title;
   final Widget appIcon;
   final List<SideMenuItem> items;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class SideMenu extends StatelessWidget {
       child: Expanded(
         child: Drawer(
           child: Container(
-            color: Theme.of(context).scaffoldBackgroundColor,
+            color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
             child: SingleChildScrollView(
               child: ListView(
                 shrinkWrap: true,
