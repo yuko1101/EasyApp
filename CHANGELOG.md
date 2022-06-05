@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Fixed Sidebar Issue
+
 ## 0.1.1
 
 - Added `backgroundColor` Option for SideMenu
