@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Fixed `backgroundColor` for SideBar
+
 ## 0.1.2
 
 - Fixed Sidebar Issue

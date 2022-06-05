@@ -12,7 +12,8 @@ class PageManager {
   }
 
   static bool goBack(BuildContext context) {
-    if (screenNotifier.value.runtimeType == PageManager.homeScreen.runtimeType) {
+    if (screenNotifier.value.runtimeType ==
+        PageManager.homeScreen.runtimeType) {
       return false;
     }
     if (screenNotifier.value.previousPage != null) {
