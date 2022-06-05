@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         sideMenu: SideMenu(
           title: const Text("Easy App"),
           appIcon: const Icon(Icons.ac_unit),
+          backgroundColor: Colors.yellow,
           items: [
             SideMenuItem(
               title: const Text("Home"),
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
                 if (EasyApp.currentScreen is HomeScreen) return;
                 EasyApp.pushPage(context, HomeScreen());
               },
+              backgroundColor: Colors.transparent,
             ),
             SideMenuItem(
               title: const Text("Alarm"),
@@ -38,6 +40,7 @@ class MyApp extends StatelessWidget {
                 if (EasyApp.currentScreen is AlarmScreen) return;
                 EasyApp.pushPage(context, AlarmScreen());
               },
+              backgroundColor: Colors.transparent,
             ),
           ],
         ),
