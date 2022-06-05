@@ -20,7 +20,7 @@ class SideMenu extends StatelessWidget {
       width: 210,
       child: Drawer(
         child: Container(
-          color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
+          color: backgroundColor ?? Colors.transparent, // transparent traces the background color of drawer (ThemeData#drawerTheme#backgroundColor).
           child: SingleChildScrollView(
             child: ListView(
               shrinkWrap: true,
@@ -58,7 +58,7 @@ class SideMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
+      color: backgroundColor ?? Colors.transparent, // transparent traces the background color of SideBar.
       child: InkWell(
         child: ListTile(
           onTap: onPressed,
