@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                 if (EasyApp.currentScreen is AlarmScreen) return;
                 EasyApp.pushPage(context, AlarmScreen());
               },
-            )
+            ),
           ],
         ),
       ),
