@@ -25,7 +25,7 @@ A Flutter library for building apps with ease.
 
 ## Getting started
 
-Install the package following the [installation](https://pub.dev/packages/easy_app/install)
+Install the package following the [installation](https://pub.dev/packages/easy_app/install).
 
 ### Initialize
 ```dart
@@ -136,6 +136,6 @@ await configFile.set(key: "fruits", value: fruits).set(key: "counts", value: cou
 
 ## Additional information
 
-See more examples in the [example](https://pub.dev/packages/easy_app/example)
-Also You can find the source code of this package at [Github](https://github.com/yuko1101/EasyApp).
-Change logs are available [here](https://pub.dev/packages/easy_app/changelog)
+See more examples in the [example](https://pub.dev/packages/easy_app/example).  
+Also You can find the source code of this package at [Github](https://github.com/yuko1101/EasyApp).  
+Change logs are available [here](https://pub.dev/packages/easy_app/changelog).  
