@@ -11,13 +11,24 @@ import 'package:path_provider/path_provider.dart';
 
 class EasyApp {
   static late String localPath;
+
+  static bool _pathInitialized = false;
+
+  static Future<void> initializePath() async {
+    if (_pathInitialized) return;
+    if (OS.getOS() == OSType.web) return;
+    localPath = (await getApplicationDocumentsDirectory()).path;
+    _pathInitialized = true;
+  }
+
   static Future<void> initialize({
     bool activateConnectionChecker = true,
     List<String> languages = const ["en_US"],
     required BaseScreen homeScreen,
   }) async {
-    if (OS.getOS() != OSType.web) {
+    if (OS.getOS() != OSType.web && !_pathInitialized) {
       localPath = (await getApplicationDocumentsDirectory()).path;
+      _pathInitialized = true;
     }
     if (activateConnectionChecker) NetworkUtils.init();
     if (languages.isNotEmpty) await Language.init(languages);
