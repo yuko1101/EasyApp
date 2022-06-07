@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'notification_data.dart';
 
+/// NotificationWidget is a widget that shows a notification.
 class NotificationWidget extends StatelessWidget {
   const NotificationWidget(
       {required this.notification,

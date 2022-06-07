@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// SideMenu is a drawer widget used to navigate between screens.
 class SideMenu extends StatelessWidget {
   const SideMenu({
     required this.title,

@@ -4,6 +4,7 @@ import 'base_screen.dart';
 import 'drawer.dart';
 import 'page_manager.dart';
 
+/// MainScreen is the main screen of the app. Automatically updates its screen on page changes.
 class MainScreen extends StatelessWidget {
   static const GlobalObjectKey<ScaffoldState> scaffoldKey =
       GlobalObjectKey("main_screen");

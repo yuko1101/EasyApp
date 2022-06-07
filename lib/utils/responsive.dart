@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Responsive is a class that helps you to create responsive widgets.
 class Responsive extends StatelessWidget {
   final Widget mobile;
   final Widget? tablet;
@@ -12,13 +13,16 @@ class Responsive extends StatelessWidget {
     required this.desktop,
   }) : super(key: key);
 
+  /// Returns whether the screen size is mobile size.
   static bool isMobile(BuildContext context) =>
       MediaQuery.of(context).size.width < 850;
 
+  /// Returns whether the screen size is tablet size.
   static bool isTablet(BuildContext context) =>
       MediaQuery.of(context).size.width < 1100 &&
       MediaQuery.of(context).size.width >= 850;
 
+  /// Returns whether the screen size is desktop size.
   static bool isDesktop(BuildContext context) =>
       MediaQuery.of(context).size.width >= 1100;
 

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'notification_data.dart';
 import 'notification_widget.dart';
 
-final Tween<Offset> _offset =
-    Tween(begin: const Offset(1, 0), end: const Offset(0, 0));
 
+
+/// InAppNotification is a class that show notifications in your app.
 class InAppNotification extends StatelessWidget {
   InAppNotification(
       {this.borderColor = Colors.blue,
@@ -33,6 +33,7 @@ class InAppNotification extends StatelessWidget {
     ));
   }
 
+  /// Push a notification to the list.
   Future<void> pushNotification(NotificationData notification,
       {Duration? duration}) async {
     notifications.add(notification);
@@ -47,6 +48,7 @@ class InAppNotification extends StatelessWidget {
     }
   }
 
+  /// Delete a notification from the list.
   void deleteNotification(String id) {
     final int index =
         notifications.indexWhere((notification) => notification.id == id);
@@ -55,7 +57,7 @@ class InAppNotification extends StatelessWidget {
     _listKey.currentState?.removeItem(
         index,
         (context, animation) => SlideTransition(
-            position: animation.drive(_offset),
+            position: animation.drive(NotificationList._offset),
             child: NotificationWidget(
                 notification: deleted,
                 backgroundColor: backgroundColor,
@@ -63,13 +65,19 @@ class InAppNotification extends StatelessWidget {
   }
 }
 
+/// NotificationList is an animated list used in InAppNotification.
 class NotificationList extends StatefulWidget {
   const NotificationList(this.parentContext, {Key? key}) : super(key: key);
   final BuildContext parentContext;
+
+  /// Animation of the notification.
+  static final Tween<Offset> _offset = Tween(begin: const Offset(1, 0), end: const Offset(0, 0));
+
   @override
   NotificationListState createState() => NotificationListState();
 }
 
+/// State of NotificationList.
 class NotificationListState extends State<NotificationList> {
   @override
   void initState() {
@@ -89,7 +97,7 @@ class NotificationListState extends State<NotificationList> {
           final InAppNotification inAppNotification =
               widget.parentContext.widget as InAppNotification;
           return SlideTransition(
-            position: animation.drive(_offset),
+            position: animation.drive(NotificationList._offset),
             child: NotificationWidget(
                 notification: inAppNotification.notifications[index],
                 borderColor: inAppNotification.borderColor,
