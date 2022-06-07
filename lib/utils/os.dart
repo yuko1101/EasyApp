@@ -28,9 +28,11 @@ class OS extends StatelessWidget {
 
   /// Returns whether the OS is either Android or iOS.
   static bool isMobile() => Platform.isAndroid || Platform.isIOS;
+
   /// Returns whether the OS is either Windows, macOS or Linux.
   static bool isDesktopOrLaptop() =>
       Platform.isMacOS || Platform.isWindows || Platform.isLinux;
+
   /// Returns whether the OS is Web.
   static bool isWeb() => kIsWeb;
 

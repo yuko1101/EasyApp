@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'notification_data.dart';
 import 'notification_widget.dart';
 
-
-
 /// InAppNotification is a class that show notifications in your app.
 class InAppNotification extends StatelessWidget {
   InAppNotification(
@@ -71,7 +69,8 @@ class NotificationList extends StatefulWidget {
   final BuildContext parentContext;
 
   /// Animation of the notification.
-  static final Tween<Offset> _offset = Tween(begin: const Offset(1, 0), end: const Offset(0, 0));
+  static final Tween<Offset> _offset =
+      Tween(begin: const Offset(1, 0), end: const Offset(0, 0));
 
   @override
   NotificationListState createState() => NotificationListState();

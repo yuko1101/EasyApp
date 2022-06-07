@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class NetworkUtils {
   /// Stream of connectivity status.
   static late StreamSubscription connectivitySubscription;
+
   /// Current network status
   static late ConnectivityResult connectivityResult;
 

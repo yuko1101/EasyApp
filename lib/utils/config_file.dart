@@ -6,10 +6,13 @@ class ConfigFile {
   ConfigFile(this.file, this.defaultValue, {this.route = const []}) {
     data = defaultValue;
   }
+
   /// The file that stores the config data.
   final File file;
+
   /// The default config data.
   final Map<String, dynamic> defaultValue;
+
   /// The JSON route to the current path.
   final List<String> route;
 
