@@ -1,3 +1,7 @@
+## 0.1.6
+
+- Added `EasyApp.initializePath()` method
+
 ## 0.1.5
 
 - Update README.md
