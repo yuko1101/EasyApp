@@ -1,3 +1,7 @@
+## 0.1.7
+
+- Added descriptions to most of methods and classes
+
 ## 0.1.6
 
 - Added `EasyApp.initializePath()` method
