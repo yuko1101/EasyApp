@@ -12,7 +12,7 @@ class SideMenu extends StatelessWidget {
 
   final Widget title;
   final Widget appIcon;
-  final List<SideMenuItem> items;
+  final List<Widget> items;
   final Color? backgroundColor;
 
   @override

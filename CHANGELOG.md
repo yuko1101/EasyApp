@@ -1,3 +1,7 @@
+## 0.1.8
+
+- Drawer now supports `Widget` as its items.
+
 ## 0.1.7
 
 - Added descriptions to most of methods and classes
