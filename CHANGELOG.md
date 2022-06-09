@@ -1,6 +1,10 @@
+## 0.1.9
+
+- Added InAppNotification default colors
+
 ## 0.1.8
 
-- Drawer now supports `Widget` as its items.
+- Drawer now supports `Widget` as its items
 
 ## 0.1.7
 
