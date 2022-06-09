@@ -66,7 +66,7 @@ class ConfigFile {
   }
 
   /// Get value from JSON object. If key is not provided, return the value at current path.
-  dynamic getValue(String? key) {
+  dynamic getValue([String? key]) {
     if (key == null) {
       if (route.isEmpty) return data;
       return getPreObjectFromPath()[route.last];
