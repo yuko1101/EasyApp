@@ -34,12 +34,7 @@ class ConfigFile {
   /// Load the config data from the file.
   Future<ConfigFile> load() async {
     if (!file.existsSync()) await save();
-    try {
-      data = jsonDecode(file.readAsStringSync());
-    } catch (e) {
-      print(e);
-      await save(); //ファイルを変更前に戻す
-    }
+    data = jsonDecode(file.readAsStringSync());
     return this;
   }
 
