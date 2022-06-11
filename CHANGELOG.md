@@ -1,3 +1,8 @@
+## 0.1.10
+
+- Improved Language Manager
+- Fixed the parameter of getValue() in ConfigFile class.
+
 ## 0.1.9
 
 - Added InAppNotification default colors
