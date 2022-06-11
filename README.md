@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Easy App Example',
+      // MainScreen is EasyApp's widget which has BaseScreen pages.
       home: MainScreen(
         sideMenu: SideMenu(
           title: const Text("Easy App"),
