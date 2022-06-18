@@ -1,3 +1,7 @@
+## 0.1.13
+
+- Fixed `connectivityResult` in NetworkUtils not being initialized.
+
 ## 0.1.12
 
 - Customizable NetworkUtils

@@ -9,18 +9,21 @@ class NetworkUtils {
   /// Current network status
   static late ConnectivityResult connectivityResult;
 
+  /// Minimum network level
   static late ConnectivityResult minimum;
 
   /// Initialize network utils
-  static void init(ConnectivityResult minimumNetworkLevel) async {
+  static Future<void> init(ConnectivityResult minimumNetworkLevel) async {
     minimum = minimumNetworkLevel;
     connectivitySubscription = Connectivity()
         .onConnectivityChanged
         .listen((ConnectivityResult result) {
       connectivityResult = result;
     });
+    connectivityResult = await Connectivity().checkConnectivity();
   }
 
+  /// Set minimum network level
   static void setMinimumNetworkLevel(ConnectivityResult minimumNetworkLevel) {
     minimum = minimumNetworkLevel;
   }
