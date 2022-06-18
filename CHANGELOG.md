@@ -1,6 +1,6 @@
 ## 0.1.13
 
-- Fixed `connectivityResult` in NetworkUtils not being initialized.
+- Fixed `connectivityResult` in NetworkUtils not being initialized and updated.
 
 ## 0.1.12
 
