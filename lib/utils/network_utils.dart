@@ -40,7 +40,7 @@ class NetworkUtils {
 
   /// Check if the internet connection is accessible
   static bool networkAccessible() {
-    return networkConnected() && connectivityResult.index >= minimum.index;
+    return networkConnected() && connectivityResult.index <= minimum.index;
   }
 
   /// Show a message when there is no internet connection
