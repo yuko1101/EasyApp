@@ -16,9 +16,9 @@ class NetworkUtils {
   static Future<void> init(ConnectivityResult minimumNetworkLevel) async {
     minimum = minimumNetworkLevel;
     connectivitySubscription = Connectivity()
-        .onConnectivityChanged
-        .listen((ConnectivityResult result) {
-      connectivityResult = result;
+        .onConnectivityChanged.listen((event) { });
+    connectivitySubscription.onData((data) {
+      connectivityResult = data;
     });
     connectivityResult = await Connectivity().checkConnectivity();
   }
