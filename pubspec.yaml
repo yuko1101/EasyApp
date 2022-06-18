@@ -1,6 +1,6 @@
 name: easy_app
 description: A simple flutter package to make app easily. Provides useful functions for app. This package would be used in small-scale app, such as a personal app, or a test app.
-version: 0.1.11
+version: 0.1.12
 homepage: https://github.com/yuko1101/EasyApp
 
 environment:
@@ -11,14 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-  path_provider: ^2.0.2
-  provider: ^6.0.1
-  uuid: ^3.0.5
+  path_provider: ^2.0.11
+  provider: ^6.0.3
+  uuid: ^3.0.6
 
-  fluttertoast: ^8.0.8
+  fluttertoast: ^8.0.9
 
   receive_sharing_intent: ^1.4.5
-  connectivity_plus: ^2.3.0
+  connectivity_plus: ^2.3.4
 
 dev_dependencies:
   flutter_test:

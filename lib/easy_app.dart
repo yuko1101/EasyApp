@@ -1,5 +1,6 @@
 library easy_app;
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_app/screen/base_screen.dart';
 import 'package:easy_app/screen/main_screen.dart';
 import 'package:easy_app/screen/page_manager.dart';
@@ -30,13 +31,14 @@ class EasyApp {
     bool activateConnectionChecker = true,
     List<String> languages = const ["en_US"],
     required BaseScreen homeScreen,
+    ConnectivityResult minimumNetworkLevel = ConnectivityResult.mobile,
   }) async {
     // Initialize the path if it hasn't been initialized yet.
     if (OS.getOS() != OSType.web && !_pathInitialized) {
       localPath = (await getApplicationDocumentsDirectory()).path;
       _pathInitialized = true;
     }
-    if (activateConnectionChecker) NetworkUtils.init();
+    if (activateConnectionChecker) NetworkUtils.init(minimumNetworkLevel);
     if (languages.isNotEmpty) await Language.init(languages);
     PageManager.init(homeScreen);
   }
@@ -54,4 +56,8 @@ class EasyApp {
 
   /// Pops the current screen. And returns to the previous screen.
   static void popPage(BuildContext context) => PageManager.goBack(context);
+
+  /// Sets the minimum network level for the app.
+  static void setMinimumNetworkLevel(ConnectivityResult level) =>
+      NetworkUtils.setMinimumNetworkLevel(level);
 }

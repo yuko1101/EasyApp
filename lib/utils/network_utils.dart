@@ -9,13 +9,20 @@ class NetworkUtils {
   /// Current network status
   static late ConnectivityResult connectivityResult;
 
+  static late ConnectivityResult minimum;
+
   /// Initialize network utils
-  static void init() async {
+  static void init(ConnectivityResult minimumNetworkLevel) async {
+    minimum = minimumNetworkLevel;
     connectivitySubscription = Connectivity()
         .onConnectivityChanged
         .listen((ConnectivityResult result) {
       connectivityResult = result;
     });
+  }
+
+  static void setMinimumNetworkLevel(ConnectivityResult minimumNetworkLevel) {
+    minimum = minimumNetworkLevel;
   }
 
   /// Stop listening to connectivity changes
@@ -30,7 +37,7 @@ class NetworkUtils {
 
   /// Check if the internet connection is accessible
   static bool networkAccessible() {
-    return networkConnected();
+    return networkConnected() && connectivityResult.index >= minimum.index;
   }
 
   /// Show a message when there is no internet connection

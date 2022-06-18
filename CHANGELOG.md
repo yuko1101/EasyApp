@@ -1,3 +1,7 @@
+## 0.1.12
+
+- Customizable NetworkUtils
+
 ## 0.1.11
 
 - Added Pair<T, U> class, which is a pair of two values of type T and U.
