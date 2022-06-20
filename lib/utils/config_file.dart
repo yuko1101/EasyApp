@@ -108,7 +108,7 @@ class ConfigFile {
       if (!mutableData.containsKey(k)) mutableData[k] = {};
       mutableData = mutableData[k];
     }
-    return mutableData;
+    return Map<String,dynamic>.from(mutableData);
   }
 
   /// Get the parent JSON object of the current path.
@@ -119,6 +119,6 @@ class ConfigFile {
       if (!mutableData.containsKey(k)) mutableData[k] = {};
       mutableData = mutableData[k];
     }
-    return mutableData;
+    return Map<String,dynamic>.from(mutableData);
   }
 }
