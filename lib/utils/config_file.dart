@@ -14,7 +14,7 @@ class ConfigFile {
   final Map<String, dynamic> defaultValue;
 
   /// The JSON route to the current path.
-  final List<String> route;
+  List<String> route;
 
   /// The config data.
   late Map<String, dynamic> data;
