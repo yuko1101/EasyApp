@@ -106,9 +106,9 @@ class ConfigFile {
     for (int i = 0; i < route.length; i++) {
       final k = route[i];
       if (!mutableData.containsKey(k)) mutableData[k] = {};
-      mutableData = mutableData[k];
+      mutableData = Map<String,dynamic>.from(mutableData[k]);
     }
-    return Map<String,dynamic>.from(mutableData);
+    return mutableData;
   }
 
   /// Get the parent JSON object of the current path.
@@ -117,8 +117,8 @@ class ConfigFile {
     for (int i = 0; i < route.length - 1; i++) {
       final k = route[i];
       if (!mutableData.containsKey(k)) mutableData[k] = {};
-      mutableData = mutableData[k];
+      mutableData = Map<String,dynamic>.from(mutableData[k]);
     }
-    return Map<String,dynamic>.from(mutableData);
+    return mutableData;
   }
 }
