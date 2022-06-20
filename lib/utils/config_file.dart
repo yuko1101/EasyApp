@@ -100,24 +100,26 @@ class ConfigFile {
     return this;
   }
 
+  // if the target object is {}, it cannot be cast to Map<String, dynamic>
   /// Get the JSON object at the current path.
-  Map<String, dynamic> getObjectFromPath() {
-    Map<String, dynamic> mutableData = data;
+  Map<dynamic, dynamic> getObjectFromPath() {
+    Map<dynamic, dynamic> mutableData = data;
     for (int i = 0; i < route.length; i++) {
       final k = route[i];
       if (!mutableData.containsKey(k)) mutableData[k] = {};
-      mutableData = mutableData[k] as Map<String, dynamic>;
+      mutableData = mutableData[k];
     }
     return mutableData;
   }
 
+  // if the target object is {}, it cannot be cast to Map<String, dynamic>
   /// Get the parent JSON object of the current path.
-  Map<String, dynamic> getPreObjectFromPath() {
-    Map<String, dynamic> mutableData = data;
+  Map<dynamic, dynamic> getPreObjectFromPath() {
+    Map<dynamic, dynamic> mutableData = data;
     for (int i = 0; i < route.length - 1; i++) {
       final k = route[i];
       if (!mutableData.containsKey(k)) mutableData[k] = {};
-      mutableData = mutableData[k] as Map<String, dynamic>;
+      mutableData = mutableData[k];
     }
     return mutableData;
   }
