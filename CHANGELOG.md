@@ -1,3 +1,7 @@
+## 0.1.14
+
+- Made `route` property of `ConfigFile` modifiable.
+
 ## 0.1.13
 
 - Fixed `connectivityResult` in NetworkUtils not being initialized and updated.
