@@ -106,7 +106,7 @@ class ConfigFile {
     for (int i = 0; i < route.length; i++) {
       final k = route[i];
       if (!mutableData.containsKey(k)) mutableData[k] = {};
-      mutableData = Map<String,dynamic>.from(mutableData[k]);
+      mutableData = mutableData[k] as Map<String, dynamic>;
     }
     return mutableData;
   }
@@ -117,7 +117,7 @@ class ConfigFile {
     for (int i = 0; i < route.length - 1; i++) {
       final k = route[i];
       if (!mutableData.containsKey(k)) mutableData[k] = {};
-      mutableData = Map<String,dynamic>.from(mutableData[k]);
+      mutableData = mutableData[k] as Map<String, dynamic>;
     }
     return mutableData;
   }
