@@ -2,6 +2,7 @@
 
 - Made `route` property of `ConfigFile` modifiable.
 - Fixed occurrences of type mismatch exception in `ConfigFile`
+- Fixed get() method in `ConfigFile`
 
 ## 0.1.13
 
