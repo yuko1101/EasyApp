@@ -128,7 +128,6 @@ class ConfigFile {
       }
       mutableData = mutableData[k];
     }
-    print("result: " + mutableData.toString());
     return mutableData;
   }
 }
