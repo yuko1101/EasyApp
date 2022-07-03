@@ -3,8 +3,13 @@ import 'dart:io';
 
 /// ConfigFile is a class that helps you to create JSON config files easily.
 class ConfigFile {
-  ConfigFile(this.file, this.defaultValue, {this.route = const []}) {
-    data = defaultValue;
+  ConfigFile(this.file, this.defaultValue,
+      {this.route = const [], Map<String, dynamic>? storedData}) {
+    if (storedData != null) {
+      data = storedData;
+    } else {
+      data = defaultValue;
+    }
   }
 
   /// The file that stores the config data.
@@ -74,7 +79,7 @@ class ConfigFile {
   ConfigFile get(List<String> keys) {
     List<String> newRoute = [...route];
     newRoute.addAll(keys);
-    return ConfigFile(file, defaultValue, route: newRoute);
+    return ConfigFile(file, defaultValue, route: newRoute, storedData: data);
   }
 
   /// Check if the key exists in the JSON object.
@@ -118,9 +123,12 @@ class ConfigFile {
     Map<dynamic, dynamic> mutableData = data;
     for (int i = 0; i < route.length - 1; i++) {
       final k = route[i];
-      if (!mutableData.containsKey(k)) mutableData[k] = {};
+      if (!mutableData.containsKey(k)) {
+        mutableData[k] = {};
+      }
       mutableData = mutableData[k];
     }
+    print("result: " + mutableData.toString());
     return mutableData;
   }
 }
