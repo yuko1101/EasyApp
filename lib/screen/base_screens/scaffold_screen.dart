@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'base_screen.dart';
 
-/// BaseScreen is a base class to create a screen.
 class ScaffoldScreen extends BaseScreen {
   ScaffoldScreen({
     required this.body,

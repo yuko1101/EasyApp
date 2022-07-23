@@ -1,3 +1,4 @@
+/// BaseScreen is a base class to create a screen.
 class BaseScreen {
   BaseScreen({
     this.previousPage,
