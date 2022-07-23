@@ -1,3 +1,7 @@
+## 0.1.15
+
+- More Customizable Page Screen
+
 ## 0.1.14
 
 - Made `route` property of `ConfigFile` modifiable.

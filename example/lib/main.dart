@@ -1,5 +1,5 @@
 import 'package:easy_app/easy_app.dart';
-import 'package:easy_app/screen/base_screen.dart';
+import 'package:easy_app/screen/base_screens/scaffold_screen.dart';
 import 'package:easy_app/screen/drawer.dart';
 import 'package:easy_app/screen/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -49,25 +49,25 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends BaseScreen {
+class HomeScreen extends ScaffoldScreen {
   HomeScreen()
       : super(
           appBar: AppBar(
             title: const Text('Home'),
           ),
-          screen: const Center(
+          body: const Center(
             child: Text('Home Screen'),
           ),
         );
 }
 
-class AlarmScreen extends BaseScreen {
+class AlarmScreen extends ScaffoldScreen {
   AlarmScreen()
       : super(
           appBar: AppBar(
             title: const Text('Alarm'),
           ),
-          screen: const Center(
+          body: const Center(
             child: Text('Alarm Screen'),
           ),
         );

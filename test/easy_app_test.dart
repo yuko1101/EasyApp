@@ -1,5 +1,5 @@
-import 'package:easy_app/screen/base_screen.dart';
 import 'package:easy_app/screen/page_manager.dart';
+import 'package:easy_app/screen/base_screens/scaffold_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -18,8 +18,10 @@ void main() {
     await EasyApp.initialize(homeScreen: HomeScreen());
     expect(PageManager.homeScreen.runtimeType, HomeScreen);
   });
+
+  test("test2", () async {});
 }
 
-class HomeScreen extends BaseScreen {
-  HomeScreen() : super(screen: Container());
+class HomeScreen extends ScaffoldScreen {
+  HomeScreen() : super(body: Container());
 }

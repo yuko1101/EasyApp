@@ -1,7 +1,7 @@
 library easy_app;
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:easy_app/screen/base_screen.dart';
+import 'package:easy_app/screen/base_screens/base_screen.dart';
 import 'package:easy_app/screen/main_screen.dart';
 import 'package:easy_app/screen/page_manager.dart';
 import 'package:easy_app/utils/languages.dart';

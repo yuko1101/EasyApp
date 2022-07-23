@@ -50,7 +50,7 @@ class OS extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dummy = Container(height: 0, width: 0);
+    const dummy = SizedBox(height: 0, width: 0);
     switch (getOS()) {
       case OSType.android:
         return android ?? dummy;
