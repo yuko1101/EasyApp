@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
+
 /// BaseScreen is a base class to create a screen.
-class BaseScreen {
-  BaseScreen({
+abstract class BaseScreen extends StatelessWidget {
+  const BaseScreen({
     this.previousPage,
-  });
+    Key? key,
+  }) : super(key: key);
 
   /// The previous page of the screen.
-  /// If the previous page is null, open the home screen instead of closing app.
+  /// If the `previousPage` is null, open the screen that was displayed before the current screen.
   final BaseScreen? previousPage;
 }
