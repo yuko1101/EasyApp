@@ -3,14 +3,7 @@ import 'dart:io';
 
 /// ConfigFile is a class that helps you to create JSON config files easily.
 class ConfigFile {
-  ConfigFile(this.file, this.defaultValue,
-      {this.route = const [], Map<String, dynamic>? storedData}) {
-    if (storedData != null) {
-      data = storedData;
-    } else {
-      data = defaultValue;
-    }
-  }
+  ConfigFile(this.file, this.defaultValue, {this.route = const []});
 
   /// The file that stores the config data.
   final File file;
@@ -45,12 +38,9 @@ class ConfigFile {
 
   /// Set value to JSON object.
   ConfigFile set({String? key, dynamic value}) {
-    if (key == null) {
-      if (route.isEmpty) return this;
-      getPreObjectFromPath()[route.last] = value;
-      return this;
-    }
-    getObjectFromPath()[key] = value;
+    final path = [...route];
+    if (key != null) path.add(key);
+    data = _set(data, path, value, 0);
     return this;
   }
 
@@ -75,11 +65,11 @@ class ConfigFile {
     }
   }
 
-  /// Get ConfigFile instance of the path.
-  ConfigFile get(List<String> keys) {
+  /// Get PathResolver instance of the path.
+  PathResolver get(List<String> keys) {
     List<String> newRoute = [...route];
     newRoute.addAll(keys);
-    return ConfigFile(file, defaultValue, route: newRoute, storedData: data);
+    return PathResolver(route: newRoute, configFile: this);
   }
 
   /// Check if the key exists in the JSON object.
@@ -129,5 +119,41 @@ class ConfigFile {
       mutableData = mutableData[k];
     }
     return mutableData;
+  }
+
+  dynamic _set(dynamic data, List<String> path, dynamic value, int i) {
+    if (i == path.length) {
+      return value;
+    } else {
+      if (data is Map<String, dynamic>) {
+        data = Map<String, dynamic>.from(data);
+      } else {
+        data = {};
+      }
+      data[path[i]] = _set(data[path[i]], path, value, ++i);
+      return data;
+    }
+  }
+}
+
+/// PathResolver is a class to set a value deelpy.
+///
+/// PathResolvers store respective routes not to
+/// change their base ConfigFile instances' routes.
+class PathResolver extends ConfigFile {
+  PathResolver({
+    required this.configFile,
+    required List<String> route,
+  }) : super(configFile.file, configFile.defaultValue, route: route);
+
+  /// Base ConfigFile instance for this PathResolver
+  final ConfigFile configFile;
+
+  /// The config data.
+  @override
+  Map<String, dynamic> get data => configFile.data;
+  @override
+  set data(Map<String, dynamic> newData) {
+    configFile.data = newData;
   }
 }
