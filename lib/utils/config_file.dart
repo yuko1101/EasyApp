@@ -156,4 +156,12 @@ class PathResolver extends ConfigFile {
   set data(Map<String, dynamic> newData) {
     configFile.data = newData;
   }
+
+  /// Get PathResolver instance of the path.
+  @override
+  PathResolver get(List<String> keys) {
+    List<String> newRoute = [...route];
+    newRoute.addAll(keys);
+    return PathResolver(route: newRoute, configFile: configFile);
+  }
 }
