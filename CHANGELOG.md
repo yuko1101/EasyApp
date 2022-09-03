@@ -1,3 +1,7 @@
+## 0.1.17
+
+- Fixed ConfigFile was unable to set a value deeply.
+
 ## 0.1.16
 
 - Now you can create your custom BaseScreen. (Extends BaseScreen)
