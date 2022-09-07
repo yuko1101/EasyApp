@@ -19,7 +19,10 @@ class ConfigFile {
 
   /// Save the config data to the file.
   Future<ConfigFile> save({bool compact = false}) async {
-    if (!file.existsSync()) file.createSync(recursive: true);
+    if (!file.existsSync()) {
+      file.createSync(recursive: true);
+      data = defaultValue;
+    }
     if (compact) {
       await file.writeAsString(jsonEncode(data));
     } else {
