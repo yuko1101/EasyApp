@@ -42,7 +42,7 @@ class InAppNotification extends StatelessWidget {
         deleteNotification(notification.id);
       });
     } else {
-      await notification.progress!.call();
+      await notification.progress!;
       deleteNotification(notification.id);
     }
   }
