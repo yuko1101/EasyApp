@@ -1,3 +1,4 @@
+import 'package:easy_app/utils/transparent_pointer.dart';
 import 'package:flutter/material.dart';
 import 'notification_data.dart';
 import 'notification_widget.dart';
@@ -21,12 +22,8 @@ class InAppNotification extends StatelessWidget {
     return SafeArea(
       child: Align(
         alignment: Alignment.bottomRight,
-        child: Container(
-          margin: const EdgeInsets.only(bottom: 10, right: 2),
-          child: SingleChildScrollView(
-            reverse: true,
-            child: NotificationList(context),
-          ),
+        child: TransparentPointer(
+          child: NotificationList(context),
         ),
       ),
     );
@@ -92,7 +89,6 @@ class NotificationListState extends State<NotificationList> {
   Widget build(BuildContext context) {
     return AnimatedList(
       shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
       key: (widget.parentContext.widget as InAppNotification)._listKey,
       initialItemCount: (widget.parentContext.widget as InAppNotification)
           .notifications
