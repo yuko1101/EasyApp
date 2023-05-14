@@ -91,16 +91,17 @@ class MyApp extends StatelessWidget {
 ### Create a BaseScreen
 You can create a BaseScreen as follows.
 ```dart
-class HomeScreen extends BaseScreen {
-  HomeScreen()
+// ScaffoldScreen extends BaseScreen
+class HomeScreen extends ScaffoldScreen {
+  HomeScreen({super.key})
       : super(
-    appBar: AppBar(
-      title: const Text('Home'),
-    ),
-    screen: const Center(
-      child: Text('Home Screen'),
-    ),
-  );
+          appBar: AppBar(
+            title: const Text('Home'),
+          ),
+          body: const Center(
+            child: Text('Home Screen'),
+          ),
+        );
 }
 ```
 
