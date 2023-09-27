@@ -37,12 +37,20 @@ class ScaffoldScreen extends BaseScreen {
       return Scaffold(
         key: MainScreen.scaffoldKey,
         resizeToAvoidBottomInset: false,
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            if (activeDrawer) MainScreen.sideMenu,
-            Expanded(child: body),
-            endDrawer ?? const SizedBox(width: 0, height: 0)
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  if (activeDrawer) MainScreen.sideMenu,
+                  Expanded(child: body),
+                  if (endDrawer != null) endDrawer!,
+                ],
+              ),
+            ),
+            if (footer != null) footer!,
           ],
         ),
       );
