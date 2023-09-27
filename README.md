@@ -21,7 +21,6 @@ A Flutter library for building apps with ease.
 - Easy Page Navigation
 - Easy Detect Network Connection
 - Easy Responsive Design System
-- Easy In-App Notification
 
 ## Getting started
 
