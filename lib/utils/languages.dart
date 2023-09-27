@@ -8,7 +8,7 @@ class Language {
   static final List<String> languages = [];
 
   /// User's language data.
-  static late Map<String, dynamic> currentLanguage;
+  static Map<String, dynamic> currentLanguage = {};
 
   /// Initialize the languages.
   ///
@@ -30,9 +30,16 @@ class Language {
 
   /// Load the language data from the assets.
   static Future<bool> loadLanguage(String language) async {
-    if (!languages.contains(language)) return false;
+    final String matchedLanguage = languages.firstWhere(
+      (String lang) => lang == language || language.split("_")[0] == lang,
+      orElse: () => "",
+    );
+    if (matchedLanguage.isEmpty) {
+      print("Language \"$language\" is not supported!");
+      return false;
+    }
     final String content =
-        await rootBundle.loadString("assets/lang/$language.json");
+        await rootBundle.loadString("assets/lang/$matchedLanguage.json");
     final Map<String, dynamic> json = jsonDecode(content);
     currentLanguage = json;
     return true;
