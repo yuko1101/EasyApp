@@ -1,3 +1,8 @@
+## 0.1.18
+
+- Supported desktop platform.
+- Bug fixes.
+
 ## 0.1.17
 
 - Fixed ConfigFile was unable to set a value deeply.
